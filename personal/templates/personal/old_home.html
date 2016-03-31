@@ -1,0 +1,21 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+<div class="row">
+      <div class="col-md-2">.col-md-2</div>
+      <div class="col-md-10">.col-md-10
+          <br>
+          <p>Hey, welcome to my website!</p>
+      </div>
+    </div>
+<p>Hey, welcome to my website!</p>
+<h6>h1. Bootstrap heading</h6>
+{% include "personal/includes/snippet.html" %}
+{% include "personal/includes/contact.html" %}
+<div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+          <button type="button" class="btn btn-default">Right</button>
+      </div>
+<button type="button" class="btn btn-primary">Primary</button>
+{% endblock %}

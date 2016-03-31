@@ -1,0 +1,49 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="contact">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="contact">Contact</a></li>
+            </ul>
+    </div>
+      <div class="col-md-4">
+          <h1><p class="text-center">Horton Cloud Computation Center</p>
+          <small><p class="text-center">To the Moon</p> </small></h1>
+      <br>
+          <p>Hey, welcome to my website!</p>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+<p>Hey, welcome to my website!</p>
+<h6>h1. Bootstrap heading</h6>
+<form method="post" action="/upload/" enctype="multipart/form-data"> {% csrf_token %}
+        <input type="file" name="files" multiple/>
+            <input type="submit" value="Upload"/>
+        </form>
+
+{% include "personal/includes/snippet.html" %}
+{% include "personal/includes/contact.html" %}
+
+<form method="post" action="/upload/" enctype="multipart/form-data"> {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" name="files" id="exampleInputFile">
+  </div>
+  <button type="submit" value="Upload" class="btn btn-default">Submit</button>
+</form>
+
+
+
+<div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+          <button type="button" class="btn btn-default">Right</button>
+      </div>
+<button type="button" class="btn btn-primary">Primary</button>
+{% endblock %}

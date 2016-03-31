@@ -1,0 +1,82 @@
+{% extends "webapp/new_header.html" %}
+
+{% block content %}
+<h2><p class='text-center'><strong>G</strong>eomet<strong>R</strong>y <strong>A</strong>dvanced <strong>P</strong>rogram <strong>E</strong>lite version</p></h2>
+<br>
+<p><font size="3"> Welcome to Grape, Grape is a helpful and user-friendly program for guess and optimize transition state in chemical reactions.</font></p>
+<br>
+<h3>Select your reactant and product geometry<h3>
+<br>
+<p><font size="3">
+<!-- <div class="row"> -->
+    <form method="post" action="select_ic" enctype="multipart/form-data"> {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputFile">Select Reactant input</label>
+        <input type="file" name="reactant" id="reactant">
+      <br>
+
+        <label for="exampleInputFile">Select Prodcut input</label>
+        <input type="file" name="product" id="product">
+      </div>
+      <br>
+      <div class="row">
+      <div class="col-md-3">
+      <input type="text" class="form-control" name="ratio" id="ratio" placeholder="Ratio between 0.00 and 1.00" size="20">
+      </div>
+      </div>
+      <br>
+      <div class="checkbox">
+          <label>
+            <input type="checkbox" name="auto_ic" id="auto_ic"> auto ic selection
+          </label>
+        </div>
+      <br>
+      <button type="submit" id="submit" value="Upload" class="btn btn-default">Upload</button>
+    </form>
+<!-- </div> -->
+</font></p>
+{% endblock %}
+<!-- <div class="container-fluid">
+<div class="row">
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="contact">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="contact">Contact</a></li>
+            </ul>
+    </div>
+      <div class="col-md-4">
+          <h1><p class="text-center">Horton Cloud Computation Center</p>
+          <small><p class="text-center">To the Moon</p> </small></h1>
+      <br>
+          <p>Hey, welcome to my website!</p>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+<p>Hey, welcome to my website!</p>
+<h6>h1. Bootstrap heading</h6>
+<form method="post" action="/upload/" enctype="multipart/form-data"> {% csrf_token %}
+        <input type="file" name="files" multiple/>
+            <input type="submit" value="Upload"/>
+        </form>
+
+{% include "personal/includes/snippet.html" %}
+{% include "personal/includes/contact.html" %}
+
+<form method="post" action="/upload/" enctype="multipart/form-data"> {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" name="files" id="exampleInputFile">
+  </div>
+  <button type="submit" value="Upload" class="btn btn-default">Submit</button>
+</form>
+
+<div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+          <button type="button" class="btn btn-default">Right</button>
+      </div>
+<button type="button" class="btn btn-primary">Primary</button> -->
+
