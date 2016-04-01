@@ -1,3 +1,6 @@
+{% extends "webapp/new_header.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,10 +11,10 @@
         <h1>Register</h1>
 
         {% if registered %}
-        Rango says: <strong>thank you for registering!</strong>
+        <strong>thank you for registering!</strong>
         <a href="/">Return to the homepage.</a><br />
         {% else %}
-        Rango says: <strong>register here!</strong><br />
+        <strong>register here!</strong><br />
 
         <form id="user_form" method="post" action="../register/"
                 enctype="multipart/form-data">
@@ -30,3 +33,4 @@
         {% endif %}
     </body>
 </html>
+{% endblock %}

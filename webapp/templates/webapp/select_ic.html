@@ -2,9 +2,11 @@
 
 {% block content %}
 {% if valid == True %}
-<p> this is great
+<p> Task submitted
 <br>
-{{context}}
+{{context.pk}}
+<br>
+{{context.result}}
 <!-- {{context.pk}} -->
 <p>
 {% else %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from webapp.forms import SaddleForm
-import saddle
+from webapp.tasks import saddle_find_ts
 
 def webapp_index(request):
     return render(request, "webapp/saddle_home.html")    
@@ -17,10 +17,17 @@ def select_ic(request):
             valid = True
             reactant_path = data.reactant.path.encode('ascii','ignore')
             product_path = data.product.path.encode('ascii', 'ignore')
+            ratio = float(data.ratio)
+            if data.auto_ic == u'on':
+                autoic = True
+            else:
+                autoic = False
+            result = saddle_find_ts.delay(reactant_path, product_path, ratio, autoic)
             context ={
-                "reactant":reactant_path,
-                "product": product_path,
+                'pk': data.pk,
+                'result':result.id,
             }
+
         else:
             context = {
                 # 'reactant': data_form.reactant,
@@ -29,3 +36,4 @@ def select_ic(request):
                 'post': data_form.fields
             }
     return render(request, 'webapp/select_ic.html', {"valid":valid, "context":context})        
+

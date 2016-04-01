@@ -14,7 +14,13 @@
           <h1><p class="text-center">Horton Cloud Computation Center</p>
           <small><p class="text-center">To the Moon</p> </small></h1>
       <br>
-          <p>Hey, welcome to my website!</p>
+          <p>Hey, welcome to my website!
+            {% if user.is_authenticated %}
+            hello {{ user.username }}!
+            {% else %}
+            hello friend!
+            {% endif %}
+          </p>
       </div>
       <div class="col-md-3"></div>
       <div class="col-md-2"></div>
