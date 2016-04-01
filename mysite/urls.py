@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^webapp/', include('webapp.urls')),
     url(r'^', include('personal.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^myhorton/', include('myhorton.urls')),
 
 ]

@@ -1,0 +1,13 @@
+{% extends "webapp/new_header.html" %}
+
+{% block content %}
+{% if valid == True %}
+<p> success<p>
+<br>
+{{context}}
+<br>
+{% else %}
+<p>failed<p>
+<p>{{context}}<p>
+{% endif %}
+{% endblock %}

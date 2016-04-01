@@ -1,0 +1,58 @@
+{% extends "webapp/new_header.html" %}
+
+{% block content %}
+<h2><p class='text-center'><strong>H</strong>elpful <strong>O</strong>pen-source <strong>R</strong>esearch <strong>TO</strong>ol for<strong>N</strong>-fermion systems</p></h2>
+<br>
+<p><font size="3"> Welcome to Horton, Horton is a helpful and user-friendly program for testing new ideas on the quantum many-body problem at a reasonable computational cost.</font></p>
+<br>
+<h3>Select your Molecule<h3>
+<br>
+<p><font size="3">
+<!-- <div class="row"> -->
+    <form method="post" action="calculation" enctype="multipart/form-data"> {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputFile">Select Molecule input</label>
+        <input type="file" name="molecule" id="molecule">
+      </div>
+      <br>
+      <select class="form-control" name="basis" id="basis" >
+        <option>STO-3G</option>
+        <option>3-21G</option>
+        <option>cc-pVDZ</option>
+        <!-- <option>4</option> -->
+        <!-- <option>5</option> -->
+      </select>
+      <br>
+      <div class="row">
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="alpha" id="alpha" placeholder="alpha electron number" size="20">
+      </div>
+      </div>
+      <br>
+      <div class="row">
+      <div class="col-md-4">
+      <input type="text" class="form-control" name="beta" id="beta" placeholder="beta electron number" size="20">
+      </div>
+      </div>
+      <br>
+      <select class="form-control" name="scf" id="scf" >
+        <option>plain_scf</option>
+        <option>other choice</option>
+        <!-- <option>"cc-pVDZ"</option> -->
+        <!-- <option>4</option> -->
+        <!-- <option>5</option> -->
+      </select>
+      <br>
+<!--       <div class="checkbox">
+          <label>
+            <input type="checkbox" name="auto_ic" id="auto_ic"> auto ic selection
+          </label>
+        </div> -->
+      <!-- <br> -->
+      <button type="submit" id="submit" value="Upload" class="btn btn-default">Submit</button>
+    </form>
+<!-- </div> -->
+</font></p>
+
+
+{% endblock %}
